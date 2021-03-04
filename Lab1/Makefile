@@ -5,3 +5,6 @@ build:
 
 clean:
 	rm -f test_logic
+
+run:
+	./test_logic
