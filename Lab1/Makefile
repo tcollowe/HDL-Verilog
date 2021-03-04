@@ -1,7 +1,7 @@
 all: clean build
 
-build: test_logic.v structure.v behave.v
-	iverilog  -o test_logic *.v
+build:
+	iverilog  -o run *.v
 
 clean:
-	rm -f test_logic
+	rm -f run
