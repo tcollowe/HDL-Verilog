@@ -1,5 +1,7 @@
 `default_nettype none
 `timescale 1ns/1ns
+`include "structure.v"
+`include "behave.v"
 
 module test_logic ();
 
