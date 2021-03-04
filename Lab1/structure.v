@@ -1,4 +1,7 @@
-module structure (A, B, C, Q);
+module structure (A,
+                  B,
+                  C,
+                  Q);
     input A, B, C;
     output Q;
     wire w1, w2, w3, w4;
