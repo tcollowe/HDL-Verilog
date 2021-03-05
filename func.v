@@ -1,13 +1,10 @@
-module func(sel,
-            x,
-            y,
-            z);
+module func(sel,x, y, z);
     
     input [3:0] sel;
     input x, y;
     output reg z;
     
-    always @ (sel or a or b) begin
+    always @ (sel or x or y) begin
         case (sel)
             4'b0000: z <= 0;
             4'b0001: z <= x && y;
