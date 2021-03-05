@@ -1,6 +1,6 @@
 OPTS=-g2001
 TESTS=test_logic
-TESTS+=test_func1 test_mtable1
+TESTS+=test_func test_mtable
 
 all: $(TESTS)
 
@@ -10,8 +10,8 @@ clean:
 test_logic: test_logic.v structure.v behave.v
 	iverilog $(OPTS) -o $@ -s $@ $^
 	
-test_func1: test_func1.v func.v
+test_func: test_func.v func.v
 	iverilog $(OPTS) -o $@ -s $@ $^
 	
-test_mtable1: test_mtable1.v mtable.v
+test_mtable: test_mtable.v mtable.v
 	iverilog $(OPTS) -o $@ -s $@ $^
