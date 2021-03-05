@@ -9,7 +9,7 @@ module test_func();
     func fun(sel, a, b, z);
 
     initial begin
-////////////--1--///////////
+////////////--0--///////////
         sel = 0; a = 0; b = 0;
         #1
         if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
@@ -25,249 +25,267 @@ module test_func();
         sel = 0; a = 1; b = 1;
         #1
         if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
+
+
+////////////--1--///////////
+        sel = 1; a = 0; b = 0;
+        #1
+        if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
+
+        sel = 1; a = 0; b = 1;
+        #1
+        if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
+
+        sel = 1; a = 1; b = 0;
+        #1
+        if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
+
+        sel = 1; a = 1; b = 1;
+        #1
+        if(z != 1) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
 ////////////--2--///////////
-        sel = 0; a = 0; b = 0;
+        sel = 2; a = 0; b = 0;
         #1
         if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
-        sel = 0; a = 0; b = 1;
+        sel = 2; a = 0; b = 1;
         #1
         if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
-        sel = 0; a = 1; b = 0;
+        sel = 2; a = 1; b = 0;
         #1
-        if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
+        if(z != 1) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
-        sel = 0; a = 1; b = 1;
+        sel = 2; a = 1; b = 1;
         #1
         if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
 
 ////////////--3--///////////
-        sel = 0; a = 0; b = 0;
+        sel = 3; a = 0; b = 0;
         #1
         if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
-        sel = 0; a = 0; b = 1;
+        sel = 3; a = 0; b = 1;
         #1
         if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
-        sel = 0; a = 1; b = 0;
+        sel = 3; a = 1; b = 0;
         #1
-        if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
+        if(z != 1) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
-        sel = 0; a = 1; b = 1;
+        sel = 3; a = 1; b = 1;
         #1
-        if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
+        if(z != 1) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
 
 ////////////--4--///////////
-        sel = 0; a = 0; b = 0;
+        sel = 4; a = 0; b = 0;
         #1
         if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
-        sel = 0; a = 0; b = 1;
+        sel = 4; a = 0; b = 1;
+        #1
+        if(z != 1) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
+
+        sel = 4; a = 1; b = 0;
         #1
         if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
-        sel = 0; a = 1; b = 0;
-        #1
-        if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
-
-        sel = 0; a = 1; b = 1;
+        sel = 4; a = 1; b = 1;
         #1
         if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
 
 ////////////--5--///////////
-        sel = 0; a = 0; b = 0;
+        sel = 5; a = 0; b = 0;
         #1
         if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
-        sel = 0; a = 0; b = 1;
+        sel = 5; a = 0; b = 1;
+        #1
+        if(z != 1) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
+
+        sel = 5; a = 1; b = 0;
         #1
         if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
-        sel = 0; a = 1; b = 0;
+        sel = 5; a = 1; b = 1;
         #1
-        if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
-
-        sel = 0; a = 1; b = 1;
-        #1
-        if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
+        if(z != 1) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
 
 ////////////--6--///////////
-        sel = 0; a = 0; b = 0;
+        sel = 6; a = 0; b = 0;
         #1
         if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
-        sel = 0; a = 0; b = 1;
+        sel = 6; a = 0; b = 1;
         #1
-        if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
+        if(z != 1) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
-        sel = 0; a = 1; b = 0;
+        sel = 6; a = 1; b = 0;
         #1
-        if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
+        if(z != 1) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
-        sel = 0; a = 1; b = 1;
+        sel = 6; a = 1; b = 1;
         #1
         if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
 
 ////////////--7--///////////
-        sel = 0; a = 0; b = 0;
+        sel = 7; a = 0; b = 0;
         #1
         if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
-        sel = 0; a = 0; b = 1;
+        sel = 7; a = 0; b = 1;
         #1
-        if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
+        if(z != 1) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
-        sel = 0; a = 1; b = 0;
+        sel = 7; a = 1; b = 0;
         #1
-        if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
+        if(z != 1) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
-        sel = 0; a = 1; b = 1;
+        sel = 7; a = 1; b = 1;
         #1
-        if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
+        if(z != 1) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
 ////////////--8--///////////
-        sel = 0; a = 0; b = 0;
+        sel = 8; a = 0; b = 0;
+        #1
+        if(z != 1) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
+
+        sel = 8; a = 0; b = 1;
         #1
         if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
-        sel = 0; a = 0; b = 1;
+        sel = 8; a = 1; b = 0;
         #1
         if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
-        sel = 0; a = 1; b = 0;
-        #1
-        if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
-
-        sel = 0; a = 1; b = 1;
+        sel = 8; a = 1; b = 1;
         #1
         if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
 ////////////--9--///////////
-        sel = 0; a = 0; b = 0;
+        sel = 9; a = 0; b = 0;
+        #1
+        if(z != 1) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
+
+        sel = 9; a = 0; b = 1;
         #1
         if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
-        sel = 0; a = 0; b = 1;
+        sel = 9; a = 1; b = 0;
         #1
         if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
-        sel = 0; a = 1; b = 0;
+        sel = 9; a = 1; b = 1;
         #1
-        if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
-
-        sel = 0; a = 1; b = 1;
-        #1
-        if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
+        if(z != 1) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
 ////////////--10--///////////
-        sel = 0; a = 0; b = 0;
+        sel = 10; a = 0; b = 0;
+        #1
+        if(z != 1) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
+
+        sel = 10; a = 0; b = 1;
         #1
         if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
-        sel = 0; a = 0; b = 1;
+        sel = 10; a = 1; b = 0;
         #1
-        if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
+        if(z != 1) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
-        sel = 0; a = 1; b = 0;
-        #1
-        if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
-
-        sel = 0; a = 1; b = 1;
+        sel = 10; a = 1; b = 1;
         #1
         if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
 ////////////--11--///////////
-        sel = 0; a = 0; b = 0;
+        sel = 11; a = 0; b = 0;
+        #1
+        if(z != 1) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
+
+        sel = 11; a = 0; b = 1;
         #1
         if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
-        sel = 0; a = 0; b = 1;
+        sel = 11; a = 1; b = 0;
         #1
-        if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
+        if(z != 1) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
-        sel = 0; a = 1; b = 0;
+        sel = 11; a = 1; b = 1;
         #1
-        if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
-
-        sel = 0; a = 1; b = 1;
-        #1
-        if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
+        if(z != 1) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
 ////////////--12--///////////
-        sel = 0; a = 0; b = 0;
+        sel = 12; a = 0; b = 0;
+        #1
+        if(z != 1) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
+
+        sel = 12; a = 0; b = 1;
+        #1
+        if(z != 1) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
+
+        sel = 12; a = 1; b = 0;
         #1
         if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
-        sel = 0; a = 0; b = 1;
-        #1
-        if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
-
-        sel = 0; a = 1; b = 0;
-        #1
-        if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
-
-        sel = 0; a = 1; b = 1;
+        sel = 12; a = 1; b = 1;
         #1
         if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
 ////////////--13--///////////
-        sel = 0; a = 0; b = 0;
+        sel = 13; a = 0; b = 0;
+        #1
+        if(z != 1) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
+
+        sel = 13; a = 0; b = 1;
+        #1
+        if(z != 1) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
+
+        sel = 13; a = 1; b = 0;
         #1
         if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
-        sel = 0; a = 0; b = 1;
+        sel = 13; a = 1; b = 1;
         #1
-        if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
-
-        sel = 0; a = 1; b = 0;
-        #1
-        if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
-
-        sel = 0; a = 1; b = 1;
-        #1
-        if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
+        if(z != 1) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
 ////////////--14--///////////
-        sel = 0; a = 0; b = 0;
+        sel = 14; a = 0; b = 0;
         #1
-        if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
+        if(z != 1) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
-        sel = 0; a = 0; b = 1;
+        sel = 14; a = 0; b = 1;
         #1
-        if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
+        if(z != 1) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
-        sel = 0; a = 1; b = 0;
+        sel = 14; a = 1; b = 0;
         #1
-        if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
+        if(z != 1) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
-        sel = 0; a = 1; b = 1;
+        sel = 14; a = 1; b = 1;
         #1
         if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
 ////////////--15--///////////
-        sel = 0; a = 0; b = 0;
+        sel = 15; a = 0; b = 0;
         #1
-        if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
+        if(z != 1) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
-        sel = 0; a = 0; b = 1;
+        sel = 15; a = 0; b = 1;
         #1
-        if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
+        if(z != 1) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
-        sel = 0; a = 1; b = 0;
+        sel = 15; a = 1; b = 0;
         #1
-        if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
+        if(z != 1) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
-        sel = 0; a = 1; b = 1;
+        sel = 15; a = 1; b = 1;
         #1
-        if(z != 0) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
+        if(z != 1) $display("Err at: sel = %d,  b = %b, c = %b", sel, a, b);
 
         $display("Test func finished");
         $finish;
