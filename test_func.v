@@ -1,7 +1,7 @@
 `default_nettype none
 `timescale 1ns/1ns
 
-module test_mtable();
+module test_func();
     reg [3:0] sel;
     reg a, b;
     wire z;
