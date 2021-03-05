@@ -61,7 +61,7 @@ initial begin
     #1;
     if(q1 != q2) $display("Err: %b %b %b", a, b, c);
 
-    $display("Test finished.");
+    $display("Test logic finished.");
     $finish;
 end
 
