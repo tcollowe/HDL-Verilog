@@ -6,22 +6,22 @@
 :vpi_module "vhdl_sys";
 :vpi_module "v2005_math";
 :vpi_module "va_math";
-S_0x55e8bb016900 .scope module, "test_disp" "test_disp" 2 4;
+S_0x55e4f9b9f900 .scope module, "test_disp" "test_disp" 2 4;
  .timescale -9 -9;
-v0x55e8bb0162a0_0 .var "inp", 15 0;
-S_0x55e8bb016a80 .scope module, "display" "disp" 2 7, 3 1 0, S_0x55e8bb016900;
+v0x55e4f9b9f2a0_0 .var "inp", 15 0;
+S_0x55e4f9b9fa80 .scope module, "display" "disp" 2 7, 3 1 0, S_0x55e4f9b9f900;
  .timescale -9 -9;
     .port_info 0 /INPUT 16 "inp"
-v0x55e8bb015cd0_0 .net "inp", 15 0, v0x55e8bb0162a0_0;  1 drivers
-    .scope S_0x55e8bb016a80;
+v0x55e4f9b9ecd0_0 .net "inp", 15 0, v0x55e4f9b9f2a0_0;  1 drivers
+    .scope S_0x55e4f9b9fa80;
 T_0 ;
-    %vpi_call 3 5 "$monitor", "decimal %-8d hex %06h octal %o binary %b", v0x55e8bb015cd0_0, v0x55e8bb015cd0_0, v0x55e8bb015cd0_0, v0x55e8bb015cd0_0 {0 0 0};
+    %vpi_call 3 5 "$monitor", "decimal %-8d hex %06h octal %o binary %b", v0x55e4f9b9ecd0_0, v0x55e4f9b9ecd0_0, v0x55e4f9b9ecd0_0, v0x55e4f9b9ecd0_0 {0 0 0};
     %end;
     .thread T_0;
-    .scope S_0x55e8bb016900;
+    .scope S_0x55e4f9b9f900;
 T_1 ;
     %pushi/vec4 63921, 0, 16;
-    %store/vec4 v0x55e8bb0162a0_0, 0, 16;
+    %store/vec4 v0x55e4f9b9f2a0_0, 0, 16;
     %vpi_call 2 11 "$display", "Should be: decimal 63921    hex 00f9b1 octal 174661 binary 1111100110110001" {0 0 0};
     %vpi_call 2 12 "$write", "   Output: " {0 0 0};
     %end;
