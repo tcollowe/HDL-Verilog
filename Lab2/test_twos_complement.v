@@ -10,7 +10,7 @@ module test_twos_complement;
     initial begin
         inp = 0001;
         #1
-        if(out != 4'b1111) $display("Expecting %b, got %b", inp, out);
+        if(out != 4'b1111) $display("Expecting 1111, got %b", out);
     
     $display("Test Two's finished");
     $finish;
