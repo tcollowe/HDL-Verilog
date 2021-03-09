@@ -1,6 +1,6 @@
 OPTS=-g2001
 TESTS=test_disp
-# TESTS+=test_func test_mtable
+TESTS+=test_twos_complement
 
 all: $(TESTS)
 
@@ -10,7 +10,7 @@ clean:
 test_disp: test_disp.v disp.v
 	iverilog $(OPTS) -o $@ -s $@ $^
 	
-test_func: test_func.v func.v
+test_twos_complement: test_twos_complement.v twos_complement.v
 	iverilog $(OPTS) -o $@ -s $@ $^
 	
 test_mtable: test_mtable.v mtable.v
