@@ -21,3 +21,6 @@ test_mtable: test_mtable.v mtable.v
 
 test_gray: test_gray.v cvt_gray.v
 	iverilog $(OPTS) -o $@ -s $@ $^
+
+test_gray_inv: test_gray_inv.v cvt_gray.v
+	iverilog $(OPTS) -o $@ -s $@ $^

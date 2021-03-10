@@ -1,10 +1,10 @@
 `default_nettype none
-module gray_convert4 (twos, gray);
-	input [3:0] twos;
+module gray_convert4 (in, gray);
+	input [3:0] in;
 	output reg[3:0] gray;
 
-	always @ (twos) begin
-        case (twos)
+	always @ (in) begin
+        case (in)
             4'b0000: gray <= 4'b0000;	// 0
             4'b0001: gray <= 4'b0001;	// 1
             4'b0010: gray <= 4'b0011;	// 2
@@ -22,7 +22,31 @@ module gray_convert4 (twos, gray);
             4'b1110: gray <= 4'b1001;	// 14
             4'b1111: gray <= 4'b1000;	// 15
         endcase
-        
     end
-	
+endmodule
+
+module gray_convert4_inv (gray, out);
+	input [3:0] gray;
+	output reg[3:0] out;
+
+	always @ (gray) begin
+        case (gray)
+			4'b0000: out <= 4'b0000;
+			4'b0001: out <= 4'b0001;
+			4'b0010: out <= 4'b0011;
+			4'b0011: out <= 4'b0010;
+			4'b0100: out <= 4'b0111;
+			4'b0101: out <= 4'b0110;
+			4'b0110: out <= 4'b0100;
+			4'b0111: out <= 4'b0101;
+			4'b1000: out <= 4'b1100;
+			4'b1001: out <= 4'b1101;
+			4'b1010: out <= 4'b1100;
+			4'b1011: out <= 4'b1101;
+			4'b1100: out <= 4'b1000;
+			4'b1101: out <= 4'b1001;
+			4'b1110: out <= 4'b1011;
+			4'b1111: out <= 4'b1010;
+        endcase
+    end
 endmodule
