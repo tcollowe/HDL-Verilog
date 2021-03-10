@@ -1,6 +1,6 @@
 OPTS=-g2001
 TESTS=test_disp
-TESTS+=test_twos_complement test_twos_complement_inv
+TESTS+=test_twos_complement test_twos_complement_inv test_bcd
 
 all: $(TESTS)
 
@@ -23,4 +23,7 @@ test_gray: test_gray.v cvt_gray.v
 	iverilog $(OPTS) -o $@ -s $@ $^
 
 test_gray_inv: test_gray_inv.v cvt_gray.v
+	iverilog $(OPTS) -o $@ -s $@ $^
+
+test_bcd: test_bcd.v cvt_bcd.v
 	iverilog $(OPTS) -o $@ -s $@ $^
