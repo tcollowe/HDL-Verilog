@@ -18,3 +18,6 @@ test_twos_complement_inv: test_twos_complement_inv.v cvt_signed_twos.v
 
 test_mtable: test_mtable.v mtable.v
 	iverilog $(OPTS) -o $@ -s $@ $^
+
+test_gray: test_gray.v cvt_gray.v
+	iverilog $(OPTS) -o $@ -s $@ $^
