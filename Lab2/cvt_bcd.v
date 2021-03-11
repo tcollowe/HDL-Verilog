@@ -1,5 +1,5 @@
 module bcd_convert16(bcd_in, unsigned_out);
-   input [15:0] bcd_in;
+   input [19:0] bcd_in;
    output [15:0] unsigned_out;
    
    wire[19:0] term4, term3, term2, term1, term0;
@@ -73,18 +73,21 @@ module bcd_convert16(bcd_in, unsigned_out);
    assign unsigned_out = term4 + term3 + term2 + term1 + term0;
 endmodule
     
-//     module bcd_convert16_inv(unsigned_in, bcd_out);
-//        input [15:0] unsigned_in;
-//        output [19:0] bcd_out;
-    
-//        reg deci;
-    
-//     // convert hex to decimal here
-    
-//        always @ (unsigned_in) begin
-//        bcd_out[3:0]   = deci % 10;            // digit 0, ones place
-//        bcd_out[7:4]   = (deci / 10) % 10;     // digit 1, tens place
-//        bcd_out[11:8]  = (deci / 100) % 10;   // digit 2, hundreds place
-//        bcd_out[15:12] = (deci / 1000) % 10; // digit 3, thousands place
-//        end
-// endmodule
+module bcd_convert16_inv(unsigned_in, bcd_out);
+   input [15:0] unsigned_in;
+   output [19:0] bcd_out;
+
+   always @*
+      if (unsigned_in > 9999) begin
+         $display("ERROR - cannot convert");
+   end
+   
+   wire[3:0] bcd0 = unsigned_in [3:0];
+   wire[3:0] bcd1 = unsigned_in [5:4];
+   wire[3:0] bcd2 = unsigned_in [11:8];
+   wire[3:0] bcd3 = unsigned_in [15:12];
+   wire[3:0] bcd4 = 0;
+
+
+   assign bcd_out = { bcd4, bcd3, bcd2, bcd1, bcd0 };
+endmodule
