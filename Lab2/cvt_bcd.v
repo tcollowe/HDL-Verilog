@@ -5,7 +5,7 @@ module bcd_convert16(bcd_in, unsigned_out);
    wire[19:0] term4, term3, term2, term1, term0;
    
    wire[3:0] bcd0 = bcd_in [3:0];
-   wire[3:0] bcd1 = bcd_in [5:4];
+   wire[3:0] bcd1 = bcd_in [7:4];
    wire[3:0] bcd2 = bcd_in [11:8];
    wire[3:0] bcd3 = bcd_in [15:12];
    wire[3:0] bcd4 = bcd_in [19:16];
@@ -19,8 +19,7 @@ module bcd_convert16(bcd_in, unsigned_out);
                   (bcd4 == 4'd6) ? 60000 :
                   (bcd4 == 4'd7) ? 70000 :
                   (bcd4 == 4'd8) ? 80000 :
-                  (bcd4 == 4'd9) ? 90000 :
-                  1111;
+                  90000;
     
    assign term3 = (bcd3 == 4'd0) ? 0 :
                   (bcd3 == 4'd1) ? 1000 :
@@ -31,8 +30,7 @@ module bcd_convert16(bcd_in, unsigned_out);
                   (bcd3 == 4'd6) ? 6000 :
                   (bcd3 == 4'd7) ? 7000 :
                   (bcd3 == 4'd8) ? 8000 :
-                  (bcd3 == 4'd9) ? 9000 :
-                  1111;
+                  9000;
     
    assign term2 = (bcd2 == 4'd0) ? 0 :
                   (bcd2 == 4'd1) ? 100 :
@@ -43,8 +41,7 @@ module bcd_convert16(bcd_in, unsigned_out);
                   (bcd2 == 4'd6) ? 600 :
                   (bcd2 == 4'd7) ? 700 :
                   (bcd2 == 4'd8) ? 800 :
-                  (bcd2 == 4'd9) ? 900 :
-                  1111;
+                  900;
     
    assign term1 = (bcd1 == 4'd0) ? 0 :
                   (bcd1 == 4'd1) ? 10 :
@@ -55,8 +52,7 @@ module bcd_convert16(bcd_in, unsigned_out);
                   (bcd1 == 4'd6) ? 60 :
                   (bcd1 == 4'd7) ? 70 :
                   (bcd1 == 4'd8) ? 80 :
-                  (bcd1 == 4'd9) ? 90 :
-                  1111;
+                  90;
    
    assign term0 = (bcd0 == 4'd0) ? 0 :
                   (bcd0 == 4'd1) ? 1 :
@@ -67,8 +63,7 @@ module bcd_convert16(bcd_in, unsigned_out);
                   (bcd0 == 4'd6) ? 6 :
                   (bcd0 == 4'd7) ? 7 :
                   (bcd0 == 4'd8) ? 8 :
-                  (bcd0 == 4'd9) ? 9 :
-                  1111;
+                  9;
     
    assign unsigned_out = term4 + term3 + term2 + term1 + term0;
 endmodule
@@ -83,10 +78,10 @@ module bcd_convert16_inv(unsigned_in, bcd_out);
    end
    
    wire[3:0] bcd0 = unsigned_in [3:0];
-   wire[3:0] bcd1 = unsigned_in [5:4];
+   wire[3:0] bcd1 = unsigned_in [7:4];
    wire[3:0] bcd2 = unsigned_in [11:8];
    wire[3:0] bcd3 = unsigned_in [15:12];
-   wire[3:0] bcd4 = 0;
+   wire[3:0] bcd4 = unsigned_in [19:16];
 
 
    assign bcd_out = { bcd4, bcd3, bcd2, bcd1, bcd0 };
