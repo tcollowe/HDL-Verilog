@@ -3,12 +3,12 @@
 
 module test_bcd;
     reg [15:0] inp;
-	wire [15:0] out;
-    bcd_convert16 uut(inp, out);
+	wire [19:0] out;
+    bcd_convert16_inv uut(inp, out);
 
     initial begin
-    //     inp = 63921;
-    //     $display("Should be: decimal 63921    hex 00f9b1 octal 174661 binary 1111100110110001");
-    //     $write  ("   Output: ");
+    inp = 65535;
+    #10
+    $display("%b", out);
     end
 endmodule
