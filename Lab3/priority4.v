@@ -3,17 +3,14 @@ module priority4 (in, out, valid);
 	input wire[3:0] in;
 	output wire[1:0] out;
 	output wire valid;
+	
+	wire x, y, t3, t4, t5;
 
-	wire t1, t2, t3, t4, t5;
-	not n1(t1, in[2]);
-	and a1(t2, t1, in[1]);
-	or o1(t3, t2, in[3]);
-	or o2(t4, in[3], in[2]);
-	or o3(t5, t4, in[1], in[0]);
+	assign x = in[3] || in[2];
+	assign y = (in[3] || (in[1] && !in[2]));
+	or orv(t3, in[0], in[1], in[2], in[3]);
 
-
-	assign out = {t4, t3};
-	// assign out[1] <= t4;
-	assign valid = t5;
+	assign out = {x, y};
+	assign valid = t3;
 	
 endmodule

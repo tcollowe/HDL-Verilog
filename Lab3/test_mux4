@@ -1,0 +1,74 @@
+#! /usr/bin/vvp
+:ivl_version "10.1 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x5618484dcaf0 .scope module, "test_mux4" "test_mux4" 2 4;
+ .timescale -9 -9;
+v0x5618484fe1b0_0 .var "in", 3 0;
+v0x5618484fe270_0 .net "out", 0 0, L_0x5618484ffb90;  1 drivers
+v0x5618484fe340_0 .var "sel", 1 0;
+S_0x5618484dcc70 .scope module, "uut" "mux4" 2 9, 3 2 0, S_0x5618484dcaf0;
+ .timescale -9 -9;
+    .port_info 0 /INPUT 4 "in"
+    .port_info 1 /INPUT 2 "sel"
+    .port_info 2 /OUTPUT 1 "out"
+L_0x5618484fe440 .functor AND 1, L_0x5618484fe5a0, L_0x5618484fe780, L_0x5618484fe990, C4<1>;
+L_0x5618484fead0 .functor AND 1, L_0x5618484feb40, L_0x5618484fed10, L_0x5618484fee50, C4<1>;
+L_0x5618484fef40 .functor AND 1, L_0x5618484fefe0, L_0x5618484ff1c0, L_0x5618484ff370, C4<1>;
+L_0x5618484ff460 .functor AND 1, L_0x5618484ff560, L_0x5618484ff6d0, L_0x5618484ff8d0, C4<1>;
+L_0x5618484ff300 .functor OR 1, L_0x5618484fe440, L_0x5618484fead0, L_0x5618484fef40, L_0x5618484ff460;
+L_0x5618484ffb90 .functor BUFZ 1, L_0x5618484ff300, C4<0>, C4<0>, C4<0>;
+v0x5618484dce40_0 .net *"_s1", 0 0, L_0x5618484fe5a0;  1 drivers
+v0x5618484fcc80_0 .net *"_s11", 0 0, L_0x5618484feb40;  1 drivers
+v0x5618484fcd60_0 .net *"_s13", 0 0, L_0x5618484fec70;  1 drivers
+v0x5618484fce20_0 .net *"_s15", 0 0, L_0x5618484fed10;  1 drivers
+v0x5618484fcee0_0 .net *"_s17", 0 0, L_0x5618484fee50;  1 drivers
+v0x5618484fd010_0 .net *"_s19", 0 0, L_0x5618484fefe0;  1 drivers
+v0x5618484fd0f0_0 .net *"_s21", 0 0, L_0x5618484ff1c0;  1 drivers
+v0x5618484fd1d0_0 .net *"_s23", 0 0, L_0x5618484ff260;  1 drivers
+v0x5618484fd2b0_0 .net *"_s25", 0 0, L_0x5618484ff370;  1 drivers
+v0x5618484fd400_0 .net *"_s27", 0 0, L_0x5618484ff560;  1 drivers
+v0x5618484fd4e0_0 .net *"_s29", 0 0, L_0x5618484ff6d0;  1 drivers
+v0x5618484fd5c0_0 .net *"_s3", 0 0, L_0x5618484fe690;  1 drivers
+v0x5618484fd6a0_0 .net *"_s31", 0 0, L_0x5618484ff8d0;  1 drivers
+v0x5618484fd780_0 .net *"_s5", 0 0, L_0x5618484fe780;  1 drivers
+v0x5618484fd840_0 .net *"_s7", 0 0, L_0x5618484fe8c0;  1 drivers
+v0x5618484fd920_0 .net *"_s9", 0 0, L_0x5618484fe990;  1 drivers
+v0x5618484fd9e0_0 .net "in", 3 0, v0x5618484fe1b0_0;  1 drivers
+v0x5618484fdbd0_0 .net "out", 0 0, L_0x5618484ffb90;  alias, 1 drivers
+v0x5618484fdc90_0 .net "sel", 1 0, v0x5618484fe340_0;  1 drivers
+v0x5618484fdd70_0 .net "t1", 0 0, L_0x5618484fe440;  1 drivers
+v0x5618484fde30_0 .net "t2", 0 0, L_0x5618484fead0;  1 drivers
+v0x5618484fdef0_0 .net "t3", 0 0, L_0x5618484fef40;  1 drivers
+v0x5618484fdfb0_0 .net "t4", 0 0, L_0x5618484ff460;  1 drivers
+v0x5618484fe070_0 .net "t5", 0 0, L_0x5618484ff300;  1 drivers
+L_0x5618484fe5a0 .part v0x5618484fe1b0_0, 0, 1;
+L_0x5618484fe690 .part v0x5618484fe340_0, 1, 1;
+L_0x5618484fe780 .reduce/nor L_0x5618484fe690;
+L_0x5618484fe8c0 .part v0x5618484fe340_0, 0, 1;
+L_0x5618484fe990 .reduce/nor L_0x5618484fe8c0;
+L_0x5618484feb40 .part v0x5618484fe1b0_0, 1, 1;
+L_0x5618484fec70 .part v0x5618484fe340_0, 1, 1;
+L_0x5618484fed10 .reduce/nor L_0x5618484fec70;
+L_0x5618484fee50 .part v0x5618484fe340_0, 0, 1;
+L_0x5618484fefe0 .part v0x5618484fe1b0_0, 2, 1;
+L_0x5618484ff1c0 .part v0x5618484fe340_0, 1, 1;
+L_0x5618484ff260 .part v0x5618484fe340_0, 0, 1;
+L_0x5618484ff370 .reduce/nor L_0x5618484ff260;
+L_0x5618484ff560 .part v0x5618484fe1b0_0, 3, 1;
+L_0x5618484ff6d0 .part v0x5618484fe340_0, 1, 1;
+L_0x5618484ff8d0 .part v0x5618484fe340_0, 0, 1;
+    .scope S_0x5618484dcaf0;
+T_0 ;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "test_mux4.v";
+    "mux4.v";
