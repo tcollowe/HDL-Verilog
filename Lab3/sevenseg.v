@@ -35,16 +35,16 @@ module sevenseg(bcd_in, sevenseg_out);
              G = 0;
         end
         else begin
-             A = (bcd_in != 1) || (bcd_in != 4);
-             B = (bcd_in != 5) || (bcd_in != 6);
+             A = (bcd_in != 1) && (bcd_in != 4);
+             B = (bcd_in != 5) && (bcd_in != 6);
              C = (bcd_in != 2);
-             D = (bcd_in != 1) || (bcd_in != 4) || (bcd_in != 7);
+             D = (bcd_in != 1) && (bcd_in != 4) && (bcd_in != 7);
              E = (bcd_in == 0) || (bcd_in == 2) || (bcd_in == 6) || (bcd_in == 8);
-             F = (bcd_in != 1) || (bcd_in != 2) || (bcd_in != 3) || (bcd_in != 7);
-             G = (bcd_in != 0) || (bcd_in != 1) || (bcd_in != 7);
+             F = (bcd_in != 1) && (bcd_in != 2) && (bcd_in != 3) && (bcd_in != 7);
+             G = (bcd_in != 0) && (bcd_in != 1) && (bcd_in != 7);
         end
     end
 
-    assign sevenseg_out = {A, B, C, D, E, F, G};
+    assign sevenseg_out = {G, F, E, D, C, B, A};
 
 endmodule
