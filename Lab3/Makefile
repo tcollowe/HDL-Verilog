@@ -1,6 +1,6 @@
 OPTS=-g2001
 TESTS=test_priority4
-TESTS+=test_comp4 
+TESTS+=test_comp4 sevenseg
 
 all: $(TESTS)
 
