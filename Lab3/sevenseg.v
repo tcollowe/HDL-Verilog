@@ -16,31 +16,32 @@
 // E = Σ(0,2,6,8) : !(1,3,4,5,7,9)
 // F = Σ(0,4,5,6,8,9) : !(1,2,3,7)
 // G = Σ(2,3,4,5,6,8,9) : !(0,1,7)
+`default_nettype none
 
 module sevenseg(bcd_in, sevenseg_out);
-    input [3:0] bcd_in;
-    output [6:0] sevenseg_out;
+    input wire [3:0] bcd_in;
+    output wire [6:0] sevenseg_out;
 
-    wire A, B, C, D, E, F, G;
+    reg A, B, C, D, E, F, G;
 
-    always @(bcd_in)
+    always @(bcd_in) begin
         if (bcd_in > 4'd9) begin
-            assign A = 0;
-            assign B = 0;
-            assign C = 0;
-            assign D = 0;
-            assign E = 0;
-            assign F = 0;
-            assign G = 0;
+             A = 0;
+             B = 0;
+             C = 0;
+             D = 0;
+             E = 0;
+             F = 0;
+             G = 0;
         end
         else begin
-            assign A = (bcd_in != 1) || (bcd_in != 4);
-            assign B = (bcd_in != 5) || (bcd_in != 6);
-            assign C = (bcd_in != 2);
-            assign D = (bcd_in != 1) || (bcd_in != 4) || (bcd_in != 7);
-            assign E = (bcd_in == 0) || (bcd_in == 2) || (bcd_in == 6) || (bcd_in == 8);
-            assign F = (bcd_in != 1) || (bcd_in != 2) || (bcd_in != 3) || (bcd_in != 7);
-            assign G = (bcd_in != 0) || (bcd_in != 1) || (bcd_in != 7);
+             A = (bcd_in != 1) || (bcd_in != 4);
+             B = (bcd_in != 5) || (bcd_in != 6);
+             C = (bcd_in != 2);
+             D = (bcd_in != 1) || (bcd_in != 4) || (bcd_in != 7);
+             E = (bcd_in == 0) || (bcd_in == 2) || (bcd_in == 6) || (bcd_in == 8);
+             F = (bcd_in != 1) || (bcd_in != 2) || (bcd_in != 3) || (bcd_in != 7);
+             G = (bcd_in != 0) || (bcd_in != 1) || (bcd_in != 7);
         end
     end
 
