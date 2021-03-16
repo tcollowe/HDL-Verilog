@@ -9,6 +9,8 @@ module test_priority4();
     priority4 uut(in, out, valid);
 
     initial begin
+        $dumpfile("priority4.vcd");
+        $dumpvars;
         in = 4'b0000;
         #1
         if(valid != 1'b0) $display("Err at: in = %b, out = %b, valid = %b", in, out, valid);
@@ -16,22 +18,22 @@ module test_priority4();
 
 		in = 4'b1000;
         #1
-        if((valid != 1'b1) || (out != 2'b00)) $display("Err at: in = %b, out = %b, valid = %b", in, out, valid);
+        if((valid != 1'b1) || (out != 2'b11)) $display("Err at: in = %b, out = %b, valid = %b", in, out, valid);
 		#1
 
 		in = 4'b0100;
         #1
-        if((valid != 1'b1) || (out != 2'b01)) $display("Err at: in = %b, out = %b, valid = %b", in, out, valid);
+        if((valid != 1'b1) || (out != 2'b10)) $display("Err at: in = %b, out = %b, valid = %b", in, out, valid);
 		#1
 
 		in = 4'b0010;
         #1
-        if((valid != 1'b1) || (out != 2'b10)) $display("Err at: in = %b, out = %b, valid = %b", in, out, valid);
+        if((valid != 1'b1) || (out != 2'b01)) $display("Err at: in = %b, out = %b, valid = %b", in, out, valid);
 		#1
 
 		in = 4'b0001;
         #1
-        if((valid != 1'b1) || (out != 2'b11)) $display("Err at: in = %b, out = %b, valid = %b", in, out, valid);
+        if((valid != 1'b1) || (out != 2'b00)) $display("Err at: in = %b, out = %b, valid = %b", in, out, valid);
     end
 
 

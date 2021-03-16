@@ -1,37 +1,17 @@
 `default_nettype none
 module priority4 (in, out, valid);
 	input wire[3:0] in;
-	output reg[1:0] out;
-	output reg valid;
+	output wire[1:0] out;
+	output wire valid;
 
-	always @(in) begin
-	casez (in)
-		4'b???1 : begin
-			assign out = 2'b11;
-			assign valid = 1;
-		end
-		4'b??10 : begin
-			assign out = 2'b10;
-			assign valid = 1;
-		end 
-		4'b?100 : begin
-			assign out = 2'b01;
-			assign valid = 1;
-		end
-		4'b1000 : begin
-			assign out = 2'b00;
-			assign valid = 1;
-		end
-		4'b0000: begin
-			assign out = 2'b00;
-			assign valid = 0;
-		end 		 
-		default: begin
-			assign out = 2'b00;
-			assign valid = 0;
-		end 
-	endcase
+	wire [2:0] result;
+	assign out = result[2:1];
+	assign valid = result[0];
 
-	end
-	
+	assign result = (in[3] == 1) ? 3'b111 : 
+					(in[2] == 1) ? 3'b101 :
+					(in[1] == 1) ? 3'b011 :
+					(in[0] == 1) ? 3'b001 :
+					3'b000;
+
 endmodule
