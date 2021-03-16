@@ -18,7 +18,7 @@ module comp4(
         assign b1 = b [1];
         assign b2 = b [2];
         assign b3 = b [3];
-        
+
         assign e0 = (a0 && b0) || (!a0 && !b0);
         assign e1 = (a1 && b1) || (!a1 && !b1);
         assign e2 = (a2 && b2) || (!a2 && !b2);
