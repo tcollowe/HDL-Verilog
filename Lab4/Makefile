@@ -1,6 +1,6 @@
 OPTS=-g2001
 TESTS=test_adder
-TESTS+=test_mult4 test_mult
+TESTS+=test_mult4 test_mult test_bcdadd
 
 all: $(TESTS)
 
@@ -19,4 +19,5 @@ test_mult: test_mult.v mult.v
 test_bcdadd: test_bcdadd.v bcdadd.v
 	iverilog $(OPTS) -o $@ -s $@ $^
 
-
+test: test_bcdadd test_mult test_mult4 test_adder
+	./test_bcdadd ./test_mult ./test_mult4 ./test_adder
