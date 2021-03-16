@@ -31,14 +31,17 @@ module fulladd (a, b, cin, s, cout);
 
 endmodule
 
-module adder (A, B, S, C);
+module adder (a, b, s, c);
     parameter WIDTH = 10;
-    input wire[WIDH-1:0] A;
-    input wire[WIDH-1:0] B;
-    output wire[WIDH-1:0] S;
-    output wire C;
-    
-        
+    input [WIDTH-1:0] a;
+    input [WIDTH-1:0] b;
+    output [WIDTH-1:0] s;
+    output c;
 
+    wire [WIDTH:0] t;
+
+    assign t = a + b;
+    assign s = t [WIDTH-1:0];
+    assign c = t [WIDTH];
 
 endmodule
