@@ -1,6 +1,6 @@
 `default_nettype none
 module parity8 (in, out);
-    parameter EVENP = 1;
+    parameter EVENP = 0;
 	input wire[7:0] in;
 	output wire out;
 

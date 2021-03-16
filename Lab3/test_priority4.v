@@ -15,18 +15,22 @@ module test_priority4();
 		#1
 
 		in = 4'b1000;
+        #1
         if((valid != 1'b1) || (out != 2'b00)) $display("Err at: in = %b, out = %b, valid = %b", in, out, valid);
 		#1
 
 		in = 4'b0100;
+        #1
         if((valid != 1'b1) || (out != 2'b01)) $display("Err at: in = %b, out = %b, valid = %b", in, out, valid);
 		#1
 
 		in = 4'b0010;
+        #1
         if((valid != 1'b1) || (out != 2'b10)) $display("Err at: in = %b, out = %b, valid = %b", in, out, valid);
 		#1
 
 		in = 4'b0001;
+        #1
         if((valid != 1'b1) || (out != 2'b11)) $display("Err at: in = %b, out = %b, valid = %b", in, out, valid);
     end
 

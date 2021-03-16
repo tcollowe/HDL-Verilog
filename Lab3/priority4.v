@@ -5,16 +5,16 @@ module priority4 (in, out, valid);
 	output reg valid;
 
 	always @(in) begin
-	casex (in)
-		4'bxxx1 : begin
+	casez (in)
+		4'b???1 : begin
 			assign out = 2'b11;
 			assign valid = 1;
 		end
-		4'bxx10 : begin
+		4'b??10 : begin
 			assign out = 2'b10;
 			assign valid = 1;
 		end 
-		4'bx100 : begin
+		4'b?100 : begin
 			assign out = 2'b01;
 			assign valid = 1;
 		end
