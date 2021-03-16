@@ -1,7 +1,8 @@
 `default_nettype none
-module bcdadd (a, b, c);
-    input wire[3:0] a;
-    input wire[3:0] b;
-    output wire[7:0] c;
+module bcdadd (A, B, sum);
+    parameter DIGITS = 128;
+    input wire[(DIGITS*4-1):0] A;
+    input wire[(DIGITS*4-1):0] B;
+    output wire[(DIGITS*4-1):0] sum;
     
 endmodule

@@ -5,7 +5,7 @@ module halfadd (a, b, s, c);
     output wire s;
     output wire c;
 
-    wire t0, t1, t2, t3, t4, t5;
+    wire t0, t1;
 
     xor x1(t0, a, b);
     and a1(t1, a, b);
@@ -22,19 +22,23 @@ module fulladd (a, b, cin, s, cout);
     output wire s;
     output wire cout;
 
-    
+    wire s1, c1, t1;
 
+    halfadd add1(a, b, s1, c1);
+    halfadd add2(s, cin, s, t1);
+
+    assign cout = c1 || t1;
 
 endmodule
 
 module adder (A, B, S, C);
     parameter WIDTH = 10;
-    input wire A;
-    input wire B;
-    output reg S;
-    output reg C;
-
+    input wire[WIDH-1:0] A;
+    input wire[WIDH-1:0] B;
+    output wire[WIDH-1:0] S;
+    output wire C;
     
+        
 
 
 endmodule
