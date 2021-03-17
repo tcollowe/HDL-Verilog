@@ -9,7 +9,7 @@ module multiplier(a, b, c);
     generate
         for (i = 0; i < WIDTH; i = i + 1) begin:mult
             wire [2*WIDTH-1:0] product;
-            if (i == 0) assign product = b [1] ? a : 0;
+            if (i == 0) assign product = b [0] ? a : 0;
             else assign product = (b [i]) ? mult[i-1].product + (a << i) : mult[i-1].product;
         end
     endgenerate

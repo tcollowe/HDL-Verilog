@@ -5,7 +5,7 @@ module test_mult4();
     reg [3:0] a, b;
     wire [7:0] c;
 
-    mult4 uut1(a, b, c);
+    multiplier4 uut1(a, b, c);
 
     initial begin
         $display("Starting test.\n");
