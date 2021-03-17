@@ -8,19 +8,9 @@ module multiplier(a, b, c);
     genvar i;
     generate
         for (i = 0; i < WIDTH; i = i + 1) begin:mult
-            wire [2*WIDTH-1:0] partial;
-            assign partial = (b [i]) ? a << i : 0;
-        end
-    endgenerate
-
-    wire [2*WIDTH-1:0] product;
-    assign product = 0;
-
-    genvar j;
-    generate
-        for (j = 0; j < WIDTH; j = j + 1) begin:sum
-            if (j == 0) assign product = 0;
-            assign product = product + mult[j].partial;
+            wire [2*WIDTH-1:0] product;
+            if (i == 0) assign product = 0;
+            else assign product = (b [i]) ? product + (a << i) : product;
         end
     endgenerate
 
