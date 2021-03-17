@@ -1,4 +1,3 @@
-`default_nettype none
 module multiplier(a, b, c);
     parameter WIDTH = 0;
     input wire [WIDTH-1:0] a;
