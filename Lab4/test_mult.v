@@ -14,6 +14,4 @@ module test_mult();
         $display("\t\tWIDTH = %d\n\t\ta = %b (%d)\n\t\tb = %b (%d)\n\t\tc = %b (%d)\n", TEST_WIDTH, a, a, b, b, c, c);
     end
 
-
-
 endmodule
