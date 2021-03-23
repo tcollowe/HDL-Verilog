@@ -11,13 +11,15 @@ Your primitive should be called tflop, and should have an output port q, and an 
 primitive tflop(q, clk, t);
 output q;
 input clk, t;
+reg q;
+initial q = 0;
 
 table
-// clk    T     q
-    0     X  :  X;
-    1     0  :  X;
-    1     1  :  0;
-    1     1  :  1;
+// clk T : q : q'
+    0 X : ? : -;
+    r 0 : ? : -;
+    r 1 : 0 : 1;
+    r 1 : 1 : 0;
 endtable
 
 endprimitive
