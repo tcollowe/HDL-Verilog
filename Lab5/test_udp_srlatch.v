@@ -3,7 +3,7 @@
 
 module test_udp_srlatch();
 
-    reg s ;
+    reg s;
     reg r;
     wire q;
     

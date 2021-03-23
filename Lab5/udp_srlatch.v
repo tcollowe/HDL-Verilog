@@ -13,12 +13,13 @@ primitive srlatch(q, s, r);
 input s, r;
 reg q;
 output q;
+initial q = 0;
 
-	table
-	//  s r : q : q'
-		0 0 : ? : -;
-		0 1 : ? : 0;
-		1 0 : ? : 1;
-		1 1 : ? : -;
-	endtable
+table
+//  s r : q : q'
+	0 0 : ? : -;
+	0 1 : ? : 0;
+	1 0 : ? : 1;
+	1 1 : ? : -;
+endtable
 endprimitive

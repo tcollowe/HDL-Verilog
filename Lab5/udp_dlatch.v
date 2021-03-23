@@ -13,14 +13,16 @@ Your primitive should be called dlatch, have an output port q, and two input por
 primitive dlatch(q, clk, d);
 
 output q;
+reg q;
 input clk, d;
+initial q = 0;
 
 table
-// clk  d  	: q
-	0	X	: X;
-	1	0	: 0;
-	1	0	: 0;
-	1 	1	: 1;
-	1 	1	: 1;
+// clk  d : q : q'
+	0	? : ? : -;
+	1	0 : 0 : -;
+	1	0 : 1 : 0;
+	1 	1 : 0 : 1;
+	1 	1 : 1 : -;
 endtable
 endprimitive
