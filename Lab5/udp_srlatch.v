@@ -10,14 +10,15 @@ Your primitive should be called srlatch, have an output port q, and two input po
 */
 primitive srlatch(q, s, r);
 
-output q;
 input s, r;
+reg q;
+output q;
 
-table
-//  s   r  	: q
-	0	0	: X;
-	0	1	: X;
-	1	0	: X;
-	1 	1	: X;
-endtable
+	table
+	//  s r : q : q'
+		0 0 : ? : -;
+		0 1 : ? : 0;
+		1 0 : ? : 1;
+		1 1 : ? : -;
+	endtable
 endprimitive
