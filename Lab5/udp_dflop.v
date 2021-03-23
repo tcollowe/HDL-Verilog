@@ -12,14 +12,16 @@ Your primitive should be called dflop and should have an output port q, and an i
 primitive dflop(q, clk, d);
 
 output q;
+reg q;
 input clk, d;
 
+initial q = 0;
 table
-// clk  d  	: q
-	0	X	: X;
-	1	0	: 0;
-	1	0	: 0;
-	1 	1	: 1;
-	1 	1	: 1;
+// clk  d : q : q'
+	0	? : ? : -;
+	r	0 : 0 : -;
+	r	0 : 1 : 0;
+	r 	1 : 0 : 1;
+	r 	1 : 1 : -;
 endtable
 endprimitive

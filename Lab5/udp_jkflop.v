@@ -14,15 +14,16 @@ Your primitive should be called jkflop and should have an output port q, and an 
 primitive jkflop(q, clk, j, k);
 
 output q;
+reg q;
 input clk, j, k;
-
+initial q = 0;
 table
-// clk  j   k	: q
-	0	X	?	: X;
-	1	0	0	: X;
-	1	0	1	: 1;
-	1 	1	0	: X;
-	1 	1	1	: 0;
-	1 	1	1	: 1;
+// clk  j   k : q : q'
+	0 X ? : ? : -;
+	r 0	0 : ? : -;
+	r 0	1 : 1 : 0;
+	r 1	0 : ? : 1;
+	r 1	1 : 0 : 1;
+	r 1	1 : 1 : 0;
 endtable
 endprimitive
