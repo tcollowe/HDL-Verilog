@@ -6,9 +6,9 @@ Implement the D-latch using 4 NAND gates, following the same truth table as befo
 	1 	1	: 1;
 */
 `default_nettype none
-module dlatch(clk, d, q);
+module dlatch(q, clk, d);
     input wire clk, d;
-    inout wire q;
+    output wire q;
 
 	wire dn, qn, de, dne, w1;
 

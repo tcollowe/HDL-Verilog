@@ -2,15 +2,15 @@
 Use your D-Latch to implement the D-Flip-Flop:
 */
 
-module dflop(clk, d, q);
+module dflop(q, clk, d);
     input clk, d;
-    inout q;
+    output q;
 
     wire y = q;
 
     wire clkn;
     not nt1(clkn, clk);
-    gate_dlatch dl(clk, d, y);
-    gate_dlatch d2(clkn, y, q);
+    dlatch dl(y, clk, d);
+    dlatch d2(q, clkn, y);
 
 endmodule

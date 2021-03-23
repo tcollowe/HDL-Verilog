@@ -1,4 +1,4 @@
-module jkflop(clk, j, k, q);
+module jkflop(q, clk, j, k);
     input clk, j, k;
     output q;
 

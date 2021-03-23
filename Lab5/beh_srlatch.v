@@ -1,6 +1,6 @@
-module srlatch(e, s, r, q);
+module srlatch(q, e, s, r);
     input e, s, r;
-    inout q;
+    output q;
     
     always @* begin
     if (e == 0) begin 

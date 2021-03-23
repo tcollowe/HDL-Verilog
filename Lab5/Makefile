@@ -1,6 +1,6 @@
 OPTS=-g2001
 TESTS=test_udp_srlatch
-TESTS+=test_udp_dlatch test_udp_dflop test_udp_jkflop test_udp_tflop
+TESTS+=test_udp_dlatch test_udp_dflop test_udp_jkflop test_udp_tflop test_gate_srlatch
 
 all: $(TESTS)
 
@@ -20,4 +20,7 @@ test_udp_jkflop: test_udp_jkflop.v udp_jkflop.v
 	iverilog $(OPTS) -o $@ -s $@ $^
 
 test_udp_tflop: test_udp_tflop.v udp_tflop.v
+	iverilog $(OPTS) -o $@ -s $@ $^
+
+test_gate_srlatch: test_gate_srlatch.v gate_srlatch.v
 	iverilog $(OPTS) -o $@ -s $@ $^

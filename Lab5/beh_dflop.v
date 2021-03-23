@@ -1,4 +1,4 @@
-module dflop(clk, d, q);
+module dflop(q, clk, d);
     input clk, d;
     output q;
 
